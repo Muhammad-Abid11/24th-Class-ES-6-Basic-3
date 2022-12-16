@@ -105,7 +105,6 @@ console.log(`slice method(1,3) show 2 values--> ${arr.slice(1, 3)}`)
 
 //array.split() can't work
 
-
 /*
 
 let arr2 = ["learn", "abid"];
@@ -118,7 +117,10 @@ console.log(`.indexOf() Abid--> ${arr2.indexOf("abid")}`) // if -1 means notfoun
 console.log(`.sort() sort AtoZ --> ${arr2.sort()}`)
 console.log(`.length length--> ${arr2.length}`)  //        .lenght insteadof .length()
 
+
 */
+
+
 
 //--------------x---------------------------
 
@@ -148,6 +150,40 @@ console.log(`padStart()  padEnd():nhi aya smj`)
 console.log(`split()---> ${str.split('')}`)
 console.log(`charAt(15)--> ${str.charAt(15)}`) //D
 console.log(`charCodeAt() show ST-Code---> ${str.charCodeAt(15)}`)//D=68
+
+
+*/
+
+
+
+//--------------x---------------------------        Sorting Methodes
+
+/*
+
+// Sort of Alphabets
+
+let arr2 = ["learn", "abid"];
+console.log(`array--> ${arr2}`)
+console.log(`.sort() sort AtoZ --> ${arr2.sort()}`)
+
+// Sort of Numbers
+
+
+let numArr = [10, 3, 44, 55, 100];
+console.log(`numberArr--> ${numArr}`)
+console.log(`sorting of number--->${numArr.sort((a, b) => a - b)}`) //if you want to sort numeric values you need to pass callback Function
+console.log(`sorting of number--->${numArr.sort((a, b) => b - a)}`) //if you want to sort numeric values you need to pass callback Function
+
+
+// Sort of Numbers& Alphabets
+
+
+let items = ["item4", "item2", "item1", "item3"]
+console.log(items)
+const sorted = items.sort((a, b) => {
+    return +a.slice(-1) - +b.slice(-1)
+})
+console.log(sorted)
 
 
 */
