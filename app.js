@@ -13,8 +13,8 @@
 
 //////for In $ For OF------->object
 
-
 /*
+
 const object = {
     name: "Abid",
     roll: 23
@@ -26,8 +26,12 @@ for (let prop in object) {
 
 ////For Of not work in Object
 
+////ForEach not work in Object
 
 */
+
+
+
 //Alert
 // object property get in-> prop & its value in -> object[prop]  <- like array
 
@@ -52,6 +56,11 @@ console.log(`For of only display Values and not work in objects`)
 for (const prop of arr) {
     console.log(`the prop value ${prop}`);    //agar ap direct ${arr} likhengy to complete array display hogi.
 }
+
+
+arr.forEach((element, index) => {
+    console.log(`forEach--> ${index} and ${element}`)
+});
 
 */
 
@@ -187,3 +196,79 @@ console.log(sorted)
 
 
 */
+
+//--------------x---------------------------        Linked test JS
+
+/*
+
+let animals = [{ type: "lion" }, "tiger"];
+let clones = animals.slice();
+
+clones[0].type = "bear";        //ye original ko bhi edit kryga
+clones[1] = "sheep";            //ye original ko edit nhi kryga  :/
+
+
+console.log(animals[0].type, clones[0].type);
+console.log(animals[1], clones[1]);
+
+// Alert
+
+// Upper Type wala dono me change ho rha hai q k "type" as a refrence ban rha hai dono k liye
+// jbhi 1 me change too dono me change
+
+*/
+
+//--------------x---------------------------        Linked test JS
+
+/*
+
+let cat = { type: "tiger", size: "large" };
+let json = JSON.stringify(cat)                  //{ "type": "tiger", "size": "large" }
+// let json = JSON.stringify(cat, ["type"])        //{"type":"tiger"}
+console.log(json);
+
+*/
+
+//--------------x---------------------------        Linked test JS
+
+/*
+
+// example internet
+const person = {
+    isHuman: false,
+    printIntroduction: function () {
+        console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+    }
+};
+
+const me = Object.create(person);   //Object.create--> create instanse of object that already create upside
+
+me.name = 'Matthew'; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // inherited properties can be overwritten
+
+me.printIntroduction();
+// expected output: "My name is Matthew. Am I human? true"
+
+*/
+
+
+/*
+
+
+//      now test
+
+let cat = Object.create({ type: "lion" });      //ye type ki kuch nhi kryga too "cat" empty object hoga
+// console.log(cat)                         //empty object
+cat.size = "large";                         // new value add
+let copyCat = { ...cat };                   //copy
+cat.type = "tiger";                         //easi koye property cat me nhi hai too kuch nhi hoga
+console.log(copyCat.type, copyCat.size);    // jbhi copyCat.type ->undefined
+
+
+*/
+
+
+//--------------x---------------------------        Linked test JS
+
+
+
