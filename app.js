@@ -270,5 +270,68 @@ console.log(copyCat.type, copyCat.size);    // jbhi copyCat.type ->undefined
 
 //--------------x---------------------------        Linked test JS
 
+/*
+
+var thing;
+let func = (str = 'no arg') => {
+    console.log(str);
+}
+func(thing);   //thing=undefined so str=no arg
+func(null);     //str=null
+func("Abid")    //str="abid"
 
 
+*/
+
+//--------------x---------------------------        Linked test JS
+
+/*
+
+let score = [];
+score.push(1, 2);
+score.pop();
+score.push(3, 4);
+score.pop();
+score = score.reduce((a, b) => a + b);
+console.log(score);     //4
+
+*/
+
+//--------------x---------------------------        Linked test JS
+
+/*
+let value1 = 2;
+let value2 = 4;
+value1 *= value1 + (value2 * value2) / value1; //4*4=>16/2=>8+2=>10*2=>20
+console.log(value1);
+
+// check
+// let value3 = 3;
+// value3 *= 6;
+// console.log(value3);
+
+*/
+
+//--------------x---------------------------        Linked test JS
+
+/*
+
+var items = ["ball", "bat", "cat", "football"];
+items.pop();
+console.log(items.pop());   //guess output xD
+
+*/
+
+//--------------x---------------------------        Linked test JS
+
+
+if (true) {
+    var first = "you";
+}
+function fScope() {
+    var sec = "got this!";
+}
+
+fScope();
+console.log(first); //you
+console.log(sec);   //reference Error
