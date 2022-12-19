@@ -64,17 +64,82 @@ arr.forEach((element, index) => {
 
 */
 
-//// .some
+
+
+//// .some      -->Return true if at least one element in the array returns
+// true from the function passed to some Check if any element is greater than 1.
 
 /*
 
 let arr = [1, 2, 3, 4, 5];
-arr.some(arr => {
-    console.log(arr)
-})
+console.log(arr.some(n => n > 1));
 
 */
 
+
+////.every -->Return true if every element in the array returns
+//true from the function passed to every Check if every element is greater than 1
+
+/*
+
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.every(n => n > 1));
+
+*/
+
+
+////.reduce  Reduce the array to one single value by starting the sum at the
+// second value passed to reduce and updating the sum with the return
+// value of each iteration Sum all the numbers in the array starting with 0
+
+/*
+
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.reduce((a, b) => a - b))
+console.log(arr.reduce((a, b) => a + b))
+console.log(arr.reduce((a, b) => a * b))
+
+*/
+
+
+////    flat        -->concat sub-array too single array
+
+/*
+
+let arr = [1, 2, [3, 4], 5];
+console.log("Normal array", arr);
+console.log("Flat Array", arr.flat());
+
+*/
+
+
+////    find--->returned that matched
+
+/*
+
+let arr = [
+    { type: "A", game: "football" },
+    { type: "B", game: "cricket" },
+    { type: "C", game: "Hockey" }
+];
+let game = arr.find((s) => s.type === "B");
+console.log(game);
+
+*/
+
+////    findIndex
+
+/*
+
+let arr = [
+    { type: "A", game: "football" },
+    { type: "B", game: "cricket" },
+    { type: "C", game: "Hockey" }
+];
+let game = arr.findIndex((s) => s.type === "C");
+console.log(game);
+
+*/
 
 //--------------x---------------------------
 
@@ -107,6 +172,10 @@ console.log(`arrOut SpliceOut values--> ${arrOut}`);
 console.log(`slice method(1,3) show 2 values--> ${arr.slice(1, 3)}`)
 */
 
+// Splice-->it Modifies The Array Return length of array
+// Starting at the index specified by the first parameter, remove the number of elements
+//  specified by the second parameter and then add elements to the array for all remaining parameters at the index specified by the first parameter
+
 //--------------x---------------------------
 
 
@@ -118,14 +187,13 @@ console.log(`slice method(1,3) show 2 values--> ${arr.slice(1, 3)}`)
 
 let arr2 = ["learn", "abid"];
 console.log(`original array--> ${arr2}`);
-let arr3 = arr2.join();
+let arr3 = arr2.join(" and ");
 console.log(`.join() convert into string--> ${arr3}`);
 let arr4 = arr2.toString()
 console.log(`.toString() also same work--> ${arr4}`)
 console.log(`.indexOf() Abid--> ${arr2.indexOf("abid")}`) // if -1 means notfound
 console.log(`.sort() sort AtoZ --> ${arr2.sort()}`)
 console.log(`.length length--> ${arr2.length}`)  //        .lenght insteadof .length()
-
 
 */
 
@@ -324,6 +392,7 @@ console.log(items.pop());   //guess output xD
 
 //--------------x---------------------------        Linked test JS
 
+/*
 
 if (true) {
     var first = "you";
@@ -335,3 +404,124 @@ function fScope() {
 fScope();
 console.log(first); //you
 console.log(sec);   //reference Error
+
+*/
+
+
+
+//--------------x---------------------------
+
+//  /Javascript_Advanced_Concepts_1654440034.pdf
+
+/*
+
+//Function Scope
+function loop() {
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    console.log("final", i); // returns final 5
+}
+//Block Scope
+function loop2() {
+    for (let i = 0; i < 5; i++) {
+        // can access i here
+    }
+    console.log("final", i); // returns an error here due to "let"
+}
+loop();
+
+//  1
+//  2
+//  3
+//  4
+//  final 5
+
+loop2();
+// ReferenceError: i is not defined
+
+
+*/
+
+
+// Let and Const
+// Trying to access a let or const variable before it is declared
+// or outside of its block without returning it will result in a Reference Error
+
+//--------------x---------------------------
+
+
+
+
+// Immediately Invoked Function Expression or more simply IIFE is a JavaScript function
+// that runs as soon as it is defined.Can also be referred to as a Self - Executing Anonymous Function.
+
+// Grouping Operator () creates a lexical scope
+// (function () {
+// statements
+// })();
+
+// Immediately invokes the function with 2nd set of ()
+
+// Takeaways: Avoid polluting the global namespace or scope when possible.
+
+//--------------x---------------------------
+
+/*
+
+// Function Execution Context creates arguments object
+function showArgs(arg1, arg2) {
+    console.log('arguments showArgs: ', arguments); ////arguments <-keyword for parameters
+    return `argument 1 is: ${arg1} and argument 2 is: ${arg2}`; //parameter return
+}
+showArgs("hello", "world");
+// arguments: { 0: 'hello', 1: 'world' }
+// argument 1 is hello and argument 2 is world
+function noArgs() {
+    console.log('arguments noArgs: ', arguments);   //arguments <-keyword for parameters
+}
+noArgs();
+// arguments: {}
+// even though there are no arguments, the object is still created
+
+*/
+
+
+// Alert
+
+// The keyword arguments can be dangerous to use in your code as is.In ES6, a few
+// methods were introduced that can help better use arguments
+
+//--------------x---------------------------
+
+/*
+
+function showArgs(arg1, arg2) {
+    console.log("arguments in object: ", arguments);
+    console.log("arguments in Array", Array.from(arguments));
+}
+showArgs("hello", "world");
+// arguments: { 0: 'hello', 1: 'world' }
+// [ 'hello', 'world' ]
+function showArgs2(...args) {
+    console.log("arguments in 2nd object: ", args);
+    console.log(Array.from(arguments));
+    return `${args[0]} ${args[1]}`;
+}
+
+
+let returnD = showArgs2("hello", "world");
+console.log(`return Data--> ${returnD}`)
+// arguments: [ 'hello', 'world' ]
+// [ 'hello', 'world' ]
+// hello world
+
+*/
+
+
+// Alert
+
+// The keyword arguments can be dangerous to use in your code as is.In ES6, a few
+// methods were introduced that can help better use arguments
+
+//--------------x---------------------------        
