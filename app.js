@@ -11,7 +11,7 @@
 
 
 
-//////for In $ For OF------->object
+//////for In & For OF------->object
 
 /*
 
@@ -34,7 +34,6 @@ for (let prop in object) {
 
 //Alert
 // object property get in-> prop & its value in -> object[prop]  <- like array
-
 // object per "For In" work krta hai "For Of" nhi krta.
 
 
@@ -524,4 +523,112 @@ console.log(`return Data--> ${returnD}`)
 // The keyword arguments can be dangerous to use in your code as is.In ES6, a few
 // methods were introduced that can help better use arguments
 
-//--------------x---------------------------        
+//--------------x---------------------------
+
+// 'this' keyword
+
+/*
+
+var name = "Fatema";
+
+function fun() {
+    // some code here
+    console.log(this.name); //work on browser not in vscode terminal
+}
+const user = {
+    name: "Marium",
+    yearOfBirth: 1999,
+    calcAge: function () {
+        const currentYear = (new Date()).getFullYear();
+        console.log(currentYear - this.yearOfBirth);
+    }
+}
+fun(); // 'this' is global. Logs "Fatema"
+user.calcAge(); // 'this' is the user object
+fun.call(user); // 'this' is the user object. Logs "Marium"
+
+*/
+
+//--------------x---------------------------
+
+
+//////////////////// .call .bind  .apply
+// maybe they are apply on object or in Methods(function in object)
+
+
+/*
+
+// .call example
+
+
+let display = {
+   show: function (para1, para2) { //<----Method
+       console.log(`fullname is --> ${this.firstName} ${this.lastName}  ${para1} ${para2}`)
+   }
+}
+
+let data = {
+   firstName: "Abid",
+   lastName: "Khan",
+}
+
+display.show.call(data, "value1", "Value2");
+
+*/
+
+
+//--------------x---------------------------
+
+
+
+// .apply() The apply() method is similar to the call() method
+
+// The call() method takes arguments separately.
+// The apply() method takes arguments as an array.
+
+
+let display = {
+    show: function (para1, para2) { //<----Method
+        console.log(`fullname is --> ${this.firstName} ${this.lastName}  ${para1} ${para2}`)
+    }
+}
+
+let data = {
+    firstName: "Abid",
+    lastName: "Khan",
+}
+
+display.show.apply(data, ["value1", "Value2"]);
+
+
+
+//--------------x---------------------------
+
+
+// .bind----> With this method, an object can borrow a method from another object
+
+/*
+
+let display = {
+    show: function () { //<----Method
+        console.log(`fullname is --> ${this.firstName} ${this.lastName} `)
+    }
+}
+
+let data = {
+    firstName: "Abid",
+    lastName: "Khan",
+}
+
+let dis = display.show.bind(data);
+console.log(dis)
+
+*/
+
+// Alert
+// bind k result function ki body arahi hai to sahi sy smj nhi aya just
+// ye join kr rha hai
+
+
+
+//--------------x---------------------------
