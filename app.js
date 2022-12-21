@@ -553,13 +553,13 @@ fun.call(user); // 'this' is the user object. Logs "Marium"
 
 
 //////////////////// .call .bind  .apply
-// maybe they are apply on object or in Methods(function in object)
+// maybe they are JUST apply on object or in Methods(function in object)
 
 
 /*
 
 // .call example
-
+//// syntax       doSomething.call(object,arg1,arg2...)
 
 let display = {
    show: function (para1, para2) { //<----Method
@@ -585,7 +585,8 @@ display.show.call(data, "value1", "Value2");
 
 // The call() method takes arguments separately.
 // The apply() method takes arguments as an array.
-
+//// syntax       doSomething.apply(object,array)
+/*
 
 let display = {
     show: function (para1, para2) { //<----Method
@@ -600,20 +601,22 @@ let data = {
 
 display.show.apply(data, ["value1", "Value2"]);
 
-
+*/
 
 //--------------x---------------------------
 
 
 // .bind----> With this method, an object can borrow a method from another object
 
-/*
 
 let display = {
+    firstName: "Sajid",
+    lastName: "Ahmed",
     show: function () { //<----Method
-        console.log(`fullname is --> ${this.firstName} ${this.lastName} `)
+        return `fullname is --> ${this.firstName} ${this.lastName} `
     }
 }
+console.log(display.show())
 
 let data = {
     firstName: "Abid",
@@ -623,7 +626,6 @@ let data = {
 let dis = display.show.bind(data);
 console.log(dis)
 
-*/
 
 // Alert
 // bind k result function ki body arahi hai to sahi sy smj nhi aya just
@@ -631,4 +633,32 @@ console.log(dis)
 
 
 
-//--------------x---------------------------
+//--------------x---------------------------.call/.apply/.bind new example
+
+// syntax
+//  const bound =doSomething.bind(object)
+// bound(arg1,arg2...)
+
+/*
+
+const u1 = {
+    id: 1,
+    DOB: '1988-12-12'
+}
+const u2 = {
+    id: 2,
+    DOB: '2003-6-12'
+}
+const currentYear = new Date().getFullYear()
+const u1Year = new Date(u1.DOB).getFullYear()
+const u2Year = new Date(u2.DOB).getFullYear()
+const calcAge = (currentYear, userYear) => (currentYear - userYear);
+
+// console.log(calcAge(currentYear, u2Year));
+console.log("call-->", calcAge.call(u1, currentYear, u2Year))
+console.log("Apply-->", calcAge.apply(u1, [currentYear, u1Year]))
+
+const bound = calcAge.bind(u1Year)
+console.log("Bind--->", bound(currentYear, u2Year))
+
+*/
