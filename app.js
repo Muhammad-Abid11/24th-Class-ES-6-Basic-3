@@ -287,6 +287,7 @@ console.log(animals[1], clones[1]);
 
 //--------------x---------------------------        Linked test JS
 
+/*
 
 let cat = { type: "tiger", size: "large" };
 let json = JSON.stringify(cat)                  //{ "type": "tiger", "size": "large" }
@@ -294,6 +295,8 @@ let json = JSON.stringify(cat)                  //{ "type": "tiger", "size": "la
 console.log(json);
 let jsonStr = JSON.parse(json)
 console.log(jsonStr);
+
+*/
 
 //--------------x---------------------------        Linked test JS
 
@@ -362,6 +365,28 @@ score = score.reduce((a, b) => a + b);
 console.log(score);     //4
 
 */
+
+//--------------x---------------------------        Linked test JS
+
+/*
+
+A = () => {
+    console.log(ans);
+    let ans = 1;
+};
+A();
+A();
+
+*/
+
+
+// options
+// 1 then 1
+// 1 then undefined
+// undefined then 1
+// undefined then undefined
+
+
 
 //--------------x---------------------------        Linked test JS
 
@@ -607,6 +632,7 @@ display.show.apply(data, ["value1", "Value2"]);
 
 // .bind----> With this method, an object can borrow a method from another object
 
+/*
 
 let display = {
     firstName: "Sajid",
@@ -625,6 +651,7 @@ let data = {
 let dis = display.show.bind(data);
 console.log(dis)
 
+*/
 
 // Alert
 // bind k result function ki body arahi hai to sahi sy smj nhi aya just
@@ -638,7 +665,7 @@ console.log(dis)
 //  const bound =doSomething.bind(object)
 // bound(arg1,arg2...)
 
-
+/*
 
 const u1 = {
     id: 1,
@@ -659,4 +686,7 @@ console.log("Apply-->", calcAge.apply(u1, [currentYear, u1Year]))
 
 const bound = calcAge.bind(u1Year)
 console.log("Bind--->", bound(currentYear, u2Year))
+
+*/
+
 
