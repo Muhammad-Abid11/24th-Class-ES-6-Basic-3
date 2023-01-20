@@ -287,14 +287,13 @@ console.log(animals[1], clones[1]);
 
 //--------------x---------------------------        Linked test JS
 
-/*
 
 let cat = { type: "tiger", size: "large" };
 let json = JSON.stringify(cat)                  //{ "type": "tiger", "size": "large" }
 // let json = JSON.stringify(cat, ["type"])        //{"type":"tiger"}
 console.log(json);
-
-*/
+let jsonStr = JSON.parse(json)
+console.log(jsonStr);
 
 //--------------x---------------------------        Linked test JS
 
@@ -639,7 +638,7 @@ console.log(dis)
 //  const bound =doSomething.bind(object)
 // bound(arg1,arg2...)
 
-/*
+
 
 const u1 = {
     id: 1,
@@ -661,4 +660,3 @@ console.log("Apply-->", calcAge.apply(u1, [currentYear, u1Year]))
 const bound = calcAge.bind(u1Year)
 console.log("Bind--->", bound(currentYear, u2Year))
 
-*/
